@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, description, imageUrl, link }) => {
+const ProjectCard = ({ title, description, imageUrl, link, githubLink }) => {
   return (
     <motion.div
       initial={"hidden"}
@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, imageUrl, link }) => {
       }}
       className="max-w-xl bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8"
     >
-      <a href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           className="rounded-t-lg w-full"
           src={imageUrl}
@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, imageUrl, link }) => {
         />
       </a>
       <div className="p-5">
-        <a href={link}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
@@ -28,28 +28,51 @@ const ProjectCard = ({ title, description, imageUrl, link }) => {
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {description}
         </p>
-        <a
-          href={link}
-          className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
-        >
-          View
-          <svg
-            className="ml-2 -mr-1 w-4 h-4"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="flex space-x-4">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
           >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </a>
+            View
+            <svg
+              className="ml-2 -mr-1 w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300"
+          >
+            View Code
+            <svg
+              className="ml-2 -mr-1 w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </motion.div>
   );
 };
 
 export default ProjectCard;
-

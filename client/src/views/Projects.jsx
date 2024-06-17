@@ -13,12 +13,16 @@ const Projects = () => {
       description: "The StackOverflow Clone project is a full-stack web application inspired by the popular Q&A platform, Stack Overflow. It aims to provide a similar user experience for developers to ask questions, share knowledge, and collaborate within a community-driven environment.",
       imageUrl: "stack.png",
       link: "https://clinquant-sunshine-ff1bf7.netlify.app",
+      githubLink: "https://github.com/kavichselvan/webcode_2", // Add GitHub link
+
     },
     {
       title: "Bulk Email Tool",
       description: "Effortlessly send mass emails to your audience with the Bulk Email Tool. Streamline your email marketing efforts and engage with your subscribers effectively. Customize templates, schedule campaigns, and track performance easily. Simplify your email marketing strategy and reach more customers with ease.",
       imageUrl: "Bulk.Png",
       link: "https://venerable-halva-0293bd.netlify.app",
+      githubLink: "https://github.com/kavichselvan/capstone", // Add GitHub link
+
     },
 
     {
@@ -26,6 +30,8 @@ const Projects = () => {
       description: "Discover your next favorite read at the Book Store. Browse a wide selection of genres, from fiction to non-fiction, and find the perfect book to dive into. Explore bestsellers, new releases, and hidden gems, all in one convenient place. Fuel your love for reading and embark on literary adventures with the Book Store.",
       imageUrl: "Book.png",
       link: "https://darling-sprite-849979.netlify.app/",
+      githubLink: "https://github.com/kavichselvan/Book_store/tree/master/Book_store", // Add GitHub link
+
     },
 
     {
@@ -33,6 +39,8 @@ const Projects = () => {
       description: "Stay organized and productive with the Notes Making App. Capture ideas, jot down thoughts, and organize your tasks effortlessly. Create, edit, and manage your notes seamlessly across devices. Whether it's meeting notes, project ideas, or to-do lists, the Notes Making App helps you stay on top of your tasks and unleash your creativity.",
       imageUrl: "Note.png",
       link: "https://darling-trifle-610b1d.netlify.app/",
+      githubLink: "https://github.com/kavichselvan/notes_app", // Add GitHub link
+
     },
     
   ];
@@ -57,6 +65,8 @@ const Projects = () => {
               description={project.description}
               imageUrl={project.imageUrl}
               link={project.link}
+              githubLink={project.githubLink} // Pass the GitHub link
+
             />
           ))}
         </div>

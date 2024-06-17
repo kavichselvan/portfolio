@@ -10,6 +10,7 @@ import cloudDark from "../assets/cloudDark.png";
 const Home = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+
   return (
     <>
       <div
@@ -37,7 +38,6 @@ const Home = () => {
                     1000,
                     "Full Stack Developer",
                     1000,
-                    
                   ]}
                   loop={Infinity}
                 />
@@ -52,34 +52,35 @@ const Home = () => {
             >
               I am a Front-End / Full-Stack Developer
             </p>
-            <div className="flex md:justify-start ">
+            <div className="flex md:justify-start">
               {contactLinks.map((el) => (
                 <a
+                  key={el.name} // Ensure each child in the list has a unique key
                   href={el.link}
                   className="mr-5 cursor-pointer mt-8 hover:scale-125"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <img alt="" src={el.url} />
-                  {/* <p className="text-md mt-2 hover:hidden">{el.name}</p> */}
+                  <img alt={el.name} src={el.url} />
                 </a>
               ))}
             </div>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="mt-3 sm:mt-0 cursor-pointer w-1/2">
-              <a 
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
-                href="https://drive.google.com/file/d/11fCIGJQAs50xDtl_YshRlgWVnEukIJhI/view?usp=drive_link" // Your Google Drive resume link
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Recommended for security reasons when using target="_blank"
->
-  Resume
-</a>
-
+                <a 
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
+                  href="https://drive.google.com/file/d/11fCIGJQAs50xDtl_YshRlgWVnEukIJhI/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume
+                </a>
               </div>
             </div>
           </div>
           <motion.img
             initial="hidden"
-            whileInView={"visible"}
+            whileInView="visible"
             variants={{
               visible: {
                 y: 0,
